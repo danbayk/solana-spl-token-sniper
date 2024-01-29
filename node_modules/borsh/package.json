@@ -1,0 +1,59 @@
+{
+  "name": "borsh",
+  "version": "2.0.0",
+  "description": "Binary Object Representation Serializer for Hashing",
+  "main": "./lib/cjs/index.js",
+  "module": "./lib/esm/index.js",
+  "types": "./lib/types/index.d.ts",
+  "files": [
+    "lib",
+    "LICENSE-APACHE",
+    "LICENSE-MIT.txt"
+  ],
+  "scripts": {
+    "test": "jest test --runInBand",
+    "pretest": "yarn build",
+    "lint": "eslint borsh-ts/**/*.ts",
+    "fix": "eslint borsh-ts/**/*.ts --fix",
+    "compile": "tsc -b ./tsconfig.cjs.json ./tsconfig.esm.json ./tsconfig.types.json",
+    "build:clean": "rm -rf ./lib",
+    "build": "npm run build:clean && npm run compile && node .build_scripts/prepare-package-json.js"
+  },
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "require": "./lib/cjs/index.js",
+      "import": "./lib/esm/index.js",
+      "default": "./lib/esm/index.js"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/near/borsh-js.git"
+  },
+  "keywords": [
+    "serializer",
+    "binary",
+    "serializer",
+    "deserializer",
+    "consistency",
+    "deterministic"
+  ],
+  "author": "Near Inc",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/near/borsh-js/issues"
+  },
+  "homepage": "https://github.com/near/borsh-js#readme",
+  "devDependencies": {
+    "@types/babel__core": "^7.1.2",
+    "@types/babel__template": "^7.0.2",
+    "@types/node": "^12.7.3",
+    "@typescript-eslint/eslint-plugin": "^5.28.0",
+    "@typescript-eslint/parser": "^5.28.0",
+    "eslint": "^8.17.0",
+    "jest": "^26.0.1",
+    "typescript": "^4",
+    "bn.js": "^5.2.0"
+  }
+}
