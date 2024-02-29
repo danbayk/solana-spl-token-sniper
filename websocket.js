@@ -58,8 +58,6 @@ function parseBlock(transaction){
                         let now = new Date();
                         let utcString = now.toUTCString();
                         console.log(utcString);
-                        // console.log(tx[i].transaction.signatures);
-                        // getJsonPoolInfo(tx[i]);
                         ws.close();
                     }
                 }

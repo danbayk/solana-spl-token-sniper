@@ -7,8 +7,6 @@ const config = require('./swap/config');
 
 const connection = config.connection;
 
-const wsolAddress = 'So11111111111111111111111111111111111111112';
-
 const ws = new WebSocket(config.websocketConnection)
     ws.onopen = () => {
         ws.send(
@@ -16,7 +14,7 @@ const ws = new WebSocket(config.websocketConnection)
                 jsonrpc: '2.0',
                 id: 1,
                 method: 'blockSubscribe',
-                params: [{"mentionsAccountOrProgram": "srmqPvymJeFKQ4zGQed1GFppgkRHL9kaELCbyksJtPX"}, {"commitment": "confirmed", "maxSupportedTransactionVersion": 0, "encoding": "jsonParsed"}]
+                params: [{"mentionsAccountOrProgram": "srmqPvymJeFKQ4zGQed1GFppgkRHL9kaELCbyksJtPX"}, {"commitment": "processed", "maxSupportedTransactionVersion": 0, "encoding": "jsonParsed"}]
             })
         )
     }
@@ -78,7 +76,6 @@ async function parseAccountKeys(keys, signature){
     }
     if(marketId === null){
         parseAccountKeys(keys);
-        // throw new Error("marketid is null");
     } else{
         const poolKeys = await derivePoolKeys.derivePoolKeys(marketId);
         swap.swap(poolKeys, signature);
