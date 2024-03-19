@@ -2,7 +2,7 @@ const web3 = require('@solana/web3.js');
 const WebSocket = require('ws');
 const raydium_sdk_1 = require("@raydium-io/raydium-sdk");
 const bs64 = require('bs64');
-const config = require('../utils/config');
+const config = require('./config');
 
 const connection = config.connection;
 

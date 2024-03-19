@@ -14,10 +14,10 @@ Use the following instructions to install and run the program (assume node is in
 ## Running the scripts
 This project contains two different strategies for sniping new liquidity pairs:\
 ### **Strategy #1:**
-* The first strategy obtains necessary liquidity pool keys from the transaction which creates the LP. To run this script with `node websocket.js`. The transaction may fail multiple times before succeeding as Solana transactions can be dropped with certain RPC nodes.
+* The first strategy obtains necessary liquidity pool keys from the transaction which creates the LP. To run this script with `node strategy1/start1.js`. The transaction may fail multiple times before succeeding as Solana transactions can be dropped with certain RPC nodes.
 * **NOTE:** this script is slower as it must wait for the "add liquidity" transaction to reach "confirmed" status before obtaining pool data. This results in ~30 seconds between the pool creation and swap transaction.
 ### **Strategy #2:**
-* The second strategy obtains necessary liquidity pool keys from the "initialize market" transaction which typically occurs ~2 minutes before the LP is live on Raydium. This allows for all pool keys to be precomputed. This script also retries the swap transaction multiple times per second which allows for the swap to be sent during the "processed" state of the "add liquidity" transaction instead of "confirmed", greatly reducing the time between the creation of the LP and the swap transaction. This script can be run with `node findInitMarketTx.js`.\
+* The second strategy obtains necessary liquidity pool keys from the "initialize market" transaction which typically occurs ~2 minutes before the LP is live on Raydium. This allows for all pool keys to be precomputed. This script also retries the swap transaction multiple times per second which allows for the swap to be sent during the "processed" state of the "add liquidity" transaction instead of "confirmed", greatly reducing the time between the creation of the LP and the swap transaction. This script can be run with `node strategy2/start2.js`.\
 \
 *Both scripts utilize the same swapping/position management system found in `./swap/swap1.js` and `/swap/swap2.js`.*
 ## Future improvements

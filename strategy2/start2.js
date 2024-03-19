@@ -2,7 +2,7 @@ const web3 = require('@solana/web3.js');
 const raydium_sdk_1 = require("@raydium-io/raydium-sdk");
 const WebSocket = require('ws');
 const derivePoolKeys = require('./derivePoolKeys.js');
-const swap = require('./swap3.js');
+const swap = require('./swap2.js');
 const config = require('../utils/config.js');
 
 const connection = config.connection;
@@ -14,7 +14,7 @@ const ws = new WebSocket(config.websocketConnection)
                 jsonrpc: '2.0',
                 id: 1,
                 method: 'blockSubscribe',
-                params: [{"mentionsAccountOrProgram": "srmqPvymJeFKQ4zGQed1GFppgkRHL9kaELCbyksJtPX"}, {"commitment": "processed", "maxSupportedTransactionVersion": 0, "encoding": "jsonParsed"}]
+                params: [{"mentionsAccountOrProgram": "srmqPvymJeFKQ4zGQed1GFppgkRHL9kaELCbyksJtPX"}, {"commitment": "confirmed", "maxSupportedTransactionVersion": 0, "encoding": "jsonParsed"}]
             })
         )
     }
