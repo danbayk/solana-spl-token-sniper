@@ -2,7 +2,7 @@ const web3 = require('@solana/web3.js');
 const raydium_sdk_1 = require("@raydium-io/raydium-sdk");
 const spl = require('@solana/spl-token');
 const {Market} = require('@openbook-dex/openbook');
-const config = require('./swap/config.js');
+const config = require('../utils/config.js');
 
 const connection = config.connection;
 

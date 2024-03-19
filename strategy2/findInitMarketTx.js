@@ -1,9 +1,9 @@
 const web3 = require('@solana/web3.js');
 const raydium_sdk_1 = require("@raydium-io/raydium-sdk");
 const WebSocket = require('ws');
-const derivePoolKeys = require('./derivePoolKeys');
-const swap = require('./swap/swap3.js');
-const config = require('./swap/config');
+const derivePoolKeys = require('./strategy2/derivePoolKeys.js');
+const swap = require('./strategy2/swap3.js');
+const config = require('./utils/config.js');
 
 const connection = config.connection;
 
