@@ -8,6 +8,7 @@ exports.ownerAddress = '<YOUR WALLET PUBLIC KEY>';
 exports.wallet = web3_js_1.Keypair.fromSecretKey(bs58.decode('<YOUR PRIVATE KEY>'));
 exports.connection = new web3_js_1.Connection('<YOUR RPC CONNECTION URL>');
 exports.websocketConnection = '<YOUR WEBSOCKET CONNECTION URL>';
+exports.amtBuySol = '<INTEGER AMOUNT OF SOL TO USER PER SWAP, EX. 0.001>';
 exports.PROGRAMIDS = raydium_sdk_1.MAINNET_PROGRAM_ID;
 exports.ENDPOINT = raydium_sdk_1.ENDPOINT;
 exports.RAYDIUM_MAINNET_API = raydium_sdk_1.RAYDIUM_MAINNET;

@@ -38,7 +38,7 @@ function swapOnlyAmm(input) {
     });
 }
 
-const buyAmtSol = 0.001
+const buyAmtSol = config_1.amtBuySol;
 function swap(poolKeys, signature) {
     return __awaiter(this, void 0, void 0, function* () {
         const ownerAddress = config_1.ownerAddress;
