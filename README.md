@@ -19,7 +19,7 @@ This project contains two different strategies for sniping new liquidity pairs:\
 ### **Strategy #2:**
 * The second strategy obtains necessary liquidity pool keys from the "initialize market" transaction which typically occurs ~2 minutes before the LP is live on Raydium. This allows for all pool keys to be precomputed. This script also retries the swap transaction multiple times per second which allows for the swap to be sent during the "processed" state of the "add liquidity" transaction instead of "confirmed", greatly reducing the time between the creation of the LP and the swap transaction. This script can be run with `node findInitMarketTx.js`.\
 \
-*Both scripts utilize the same swapping/position management system found in `./swap/swap.js` and `/swap/swap3.js`.*
+*Both scripts utilize the same swapping/position management system found in `./swap/swap1.js` and `/swap/swap2.js`.*
 ## Future improvements
 1. **Automatic position exit strategy:** Implementing an automatic exit strategy based on user-specified parameters. Currently have to manually swap the tokens back to SOL.
 2. **Rugpull prevention:** SPL-Token are often rugpulled after launch, prevent the purchase of tokens with low-liquidity and no social media pages.

@@ -1,6 +1,6 @@
 const web3 = require('@solana/web3.js')
 const WebSocket = require('ws')
-const swap = require('../swap/swap.js')
+const swap = require('./swap1.js')
 const raydium_sdk_1 = require("@raydium-io/raydium-sdk");
 const config = require('../utils/config.js');
 

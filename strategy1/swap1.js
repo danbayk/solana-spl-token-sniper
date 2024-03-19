@@ -14,9 +14,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const assert_1 = __importDefault(require("assert"));
 const raydium_sdk_1 = require("@raydium-io/raydium-sdk");
-const config_1 = require("../utils/config");
-const formatAmmKeysById_1 = require("./formatAmmKeysById");
-const util_1 = require("../utils/util");
+const config_1 = require("../utils/config.js");
+const formatAmmKeysById_1 = require("./formatAmmKeysById.js");
+const util_1 = require("../utils/util.js");
 const { LAMPORTS_PER_SOL } = require("@solana/web3.js");
 const web3 = require("@solana/web3.js");
 const connection = config_1.connection;

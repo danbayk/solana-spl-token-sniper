@@ -12,7 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.formatAmmKeysById = void 0;
 const raydium_sdk_1 = require("@raydium-io/raydium-sdk");
 const web3_js_1 = require("@solana/web3.js");
-const config_1 = require("../utils/config");
+const config_1 = require("../utils/config.js");
 function formatAmmKeysById(id) {
     return __awaiter(this, void 0, void 0, function* () {
         const account = yield config_1.connection.getAccountInfo(new web3_js_1.PublicKey(id));
